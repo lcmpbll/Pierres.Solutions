@@ -7,12 +7,39 @@ namespace Bakery
   {
     public static void Main()
    { 
-    Bread ciabbatta = new Bread(5, 0);
+      
     //Pastry danish = new Pastry(2, 0);
     Console.WriteLine("Welcome to Pierre's Bakery!");
-    Console.WriteLine("The price for a loaf of bread is $" + ciabbatta.GetBreadPrice());
+    Console.WriteLine("The price for a loaf of bread is $5");
+    Order();
+    static int Order()
+    {
+      int loafNumber = 0;
+      Console.WriteLine("Would you like Bread or Pastry today? (bread/pastry)");
+      string breadOrPastry = Console.ReadLine();
+      if(breadOrPastry.ToLower().Contains("bread"))
+      {
+        Console.WriteLine("How Many Loaves?");
+        string loafCount = Console.ReadLine();
+        loafNumber = int.Parse(loafCount);
+       AddTotal(loafNumber); 
+      }
+      else
+      {
+        AddTotal(loafNumber);
+      }
+      return loafNumber;
+    }
+    static int AddTotal(int loafNumber)
+    {
+      Bread ciabbatta = new Bread(5, 0); 
+      int price = ciabbatta.GetBreadPrice();
+      int total = Bread.TotalBreadPrice(price, loafNumber);
+      Console.WriteLine("Your total is $" total);
+      
+    }
     //Console.WriteLine("The price for a pastry is $" + danish.GetPastryPrice());
-   // AddItem();
+   //AddItem();
 
     // static void NewOrder()
     // {
@@ -30,10 +57,12 @@ namespace Bakery
     //     {
     //       Console.WriteLine("How many loaves would you like? Enter number of loaves or (back) to go back");
     //       string breadCount = Console.ReadLine();
-    //       if(breadCount.Contains("1234567890"))
+    //       if("123456789".Contains(breadCount))
     //       { 
+               
+    //         int price = ciabbatta.GetBreadPrice();
     //         int breadNumber = int.Parse(breadCount);
-    //         orderTotal += Bread.TotalBreadPrice(breadCount);
+    //         orderTotal += ciabbatta.TotalBreadPrice(price, breadNumber);
     //       }
     //       else if(breadCount.ToString().ToLower().Contains() == "back")
     //       {
@@ -46,7 +75,7 @@ namespace Bakery
     //       }
 
       //  }
-      //}
+      // }
     }
   }
 }
