@@ -8,10 +8,10 @@ namespace Bakery
     public static void Main()
    { 
     Bread ciabbatta = new Bread(5, 0);
-    Pastry danish = new Pastry(2, 0);
+    //Pastry danish = new Pastry(2, 0);
     Console.WriteLine("Welcome to Pierre's Bakery!");
-    Console.WriteLine("The price for a loaf of bread is $" + ciabbatta.Price);
-    Console.WriteLine("The price for a pastry is $" + danish.Price);
+    Console.WriteLine("The price for a loaf of bread is $" + ciabbatta.GetBreadPrice());
+    //Console.WriteLine("The price for a pastry is $" + danish.GetPastryPrice());
    // AddItem();
 
     // static void NewOrder()
