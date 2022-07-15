@@ -53,7 +53,7 @@ namespace PierresBakery.Tests
      {
       //Arrange
       int price = 5;
-      int quantity = 1;
+      int quantity = 3;
       Bread newBread = new Bread(price, quantity);
       //Act
       int breadPrice = Bread.TotalBreadPrice(price, quantity);
