@@ -2,7 +2,7 @@
 
 #### By _Liam Campbell_
 
-
+![A patisserie](img/patisserie.jpeg)
 
 #### _A C# application for a bakery POS, calculates the price of bread and pastries and returns a total price._
 
