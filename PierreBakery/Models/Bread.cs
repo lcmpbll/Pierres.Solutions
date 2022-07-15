@@ -13,7 +13,18 @@ namespace PierreBakery.Models
 
     public static int TotalBreadPrice(int price, int quantity)
     {
-      int totalPrice = price * quantity;
+      int totalPrice = 0;
+      for(int i = 1; i <= quantity; i ++)
+      {
+        if(i % 3 != 0)
+        {
+          totalPrice += price;
+        }
+        else
+        {
+          totalPrice += 0;
+        }
+      }
       return totalPrice;
     }
 
