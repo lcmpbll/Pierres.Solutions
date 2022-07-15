@@ -7,10 +7,12 @@ namespace Bakery
   {
     public static void Main()
    { 
+    Bread ciabbatta = new Bread(5, 0);
+    Pastry danish = new Pastry(2, 0);
     Console.WriteLine("Welcome to Pierre's Bakery!");
-    //Console.WriteLine("The price for a loaf of bread is $" + Bread.Price);
-    //Console.WriteLine("The price for a pastry is $" + Pastry.Price);
-    AddItem();
+    Console.WriteLine("The price for a loaf of bread is $" + ciabbatta.Price);
+    Console.WriteLine("The price for a pastry is $" + danish.Price);
+   // AddItem();
 
     // static void NewOrder()
     // {
@@ -19,32 +21,32 @@ namespace Bakery
 
     // }
 
-    static void AddItem()
-    {
-        Console.WriteLine("Woudl you like pastry or bread? (pastry/bread)");
-        int orderTotal = 0;
-        string breadOrPastry = Console.ReadLine();
-        if(breadOrPastry.ToLower().Contains("bread"))
-        {
-          Console.WriteLine("How many loaves would you like? Enter number of loaves or (back) to go back");
-          string breadCount = Console.ReadLine();
-          if(breadCount.Contains("1234567890"))
-          { 
-            int breadNumber = int.Parse(breadCount);
-            orderTotal += Bread.TotalBreadPrice(breadCount);
-          }
-          else if(breadCount.ToString().ToLower().Contains() == "back")
-          {
-            AddItem();
-          }
-          else
-          {
-            Console.WriteLine("Please try again");
-            AddItem();
-          }
+    // static void AddItem()
+    // {
+    //     Console.WriteLine("Woudl you like pastry or bread? (pastry/bread)");
+    //     int orderTotal = 0;
+    //     string breadOrPastry = Console.ReadLine();
+    //     if(breadOrPastry.ToLower().Contains("bread"))
+    //     {
+    //       Console.WriteLine("How many loaves would you like? Enter number of loaves or (back) to go back");
+    //       string breadCount = Console.ReadLine();
+    //       if(breadCount.Contains("1234567890"))
+    //       { 
+    //         int breadNumber = int.Parse(breadCount);
+    //         orderTotal += Bread.TotalBreadPrice(breadCount);
+    //       }
+    //       else if(breadCount.ToString().ToLower().Contains() == "back")
+    //       {
+    //         AddItem();
+    //       }
+    //       else
+    //       {
+    //         Console.WriteLine("Please try again");
+    //         AddItem();
+    //       }
 
-          }
-      }
+      //  }
+      //}
     }
   }
 }
