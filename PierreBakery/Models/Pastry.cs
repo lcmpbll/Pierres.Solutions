@@ -2,14 +2,20 @@ namespace PierreBakery.Models
 {
   public class Pastry
   {
-    public int Price { get; set; }
-    public int Quantity { get; }
+    public int Price {get; set; }
+    public int Quantity {get; set; }
+    
     
 
     public Pastry(int _price, int _quantity)
     {
       Price = _price;
       Quantity = _quantity;
+    }
+
+     public int GetPastryPrice()
+    {
+      return Price;
     }
 
     public static int TotalPastryPrice(int _price, int _quantity)
