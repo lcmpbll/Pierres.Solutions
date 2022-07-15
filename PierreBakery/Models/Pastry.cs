@@ -15,6 +15,17 @@ namespace PierreBakery.Models
     public static int TotalPastryPrice(int _price, int _quantity)
     {
       int totalPrice =0;
+      for(int i = 1; i <= _quantity; i ++)
+      {
+        if(i %3 == 0)
+        {
+          totalPrice += _price/2;
+        }
+        else
+        {
+          totalPrice += _price;
+        }
+      }
       return totalPrice;
     }
   }
