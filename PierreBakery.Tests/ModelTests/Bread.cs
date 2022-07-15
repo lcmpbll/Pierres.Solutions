@@ -9,7 +9,7 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void BreadConstructor_CreatesInstanceOfBread_Bread()
     {
-      Bread newBread = new Bread();
+      Bread newBread = new Bread(5);
       Assert.AreEqual(typeof(Bread), newBread.GetType());
     }
     [TestMethod]
@@ -19,9 +19,9 @@ namespace PierresBakery.Tests
       int price = 5;
       Bread newBread = new Bread(price);
       //Act
-      int totalPrice = newBread.Price;
+      int breadPrice = newBread.Price;
       //Assert
-      Assert.AreEqual(price, totalPrice);
+      Assert.AreEqual(price, breadPrice);
     }
 
 
