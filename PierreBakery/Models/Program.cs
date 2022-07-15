@@ -30,12 +30,13 @@ namespace Bakery
       }
       return loafNumber;
     }
-    static int AddTotal(int loafNumber)
+    static void AddTotal(int loafNumber)
     {
       Bread ciabbatta = new Bread(5, 0); 
       int price = ciabbatta.GetBreadPrice();
       int total = Bread.TotalBreadPrice(price, loafNumber);
-      Console.WriteLine("Your total is $" total);
+      Console.WriteLine("Your total is $" + total);
+     
       
     }
     //Console.WriteLine("The price for a pastry is $" + danish.GetPastryPrice());

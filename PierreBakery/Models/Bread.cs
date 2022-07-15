@@ -6,7 +6,7 @@ namespace PierreBakery.Models
   { 
     
     public int Price { get; set; } 
-    public int Quantity {get; }
+    public int Quantity {get; set; }
     
 
     public Bread(int _price, int _quantity)
@@ -19,11 +19,12 @@ namespace PierreBakery.Models
     {
       return Price;
     }
-    
-  // private static void SetBreadPrice()
-  // {
-  //   Price = 5;
-  // }
+
+    public void SetQuantity(int newQuantity)
+    {
+      Quantity = newQuantity;
+    }
+  
 
     public static int TotalBreadPrice(int _price, int _quantity)
     { 
@@ -33,7 +34,7 @@ namespace PierreBakery.Models
         if(i % 3 != 0)
         {
           totalPrice = totalPrice + _price;
-          Console.WriteLine(_price);
+          
         }
         else
         {
