@@ -12,6 +12,10 @@ namespace PierreBakery.Models
       Quantity = _quantity;
     }
 
-    
+    public static int TotalPastryPrice(int _price, int _quantity)
+    {
+      int totalPrice =0;
+      return totalPrice;
+    }
   }
 }
