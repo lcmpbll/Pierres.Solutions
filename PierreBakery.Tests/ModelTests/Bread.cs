@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PierreBakery.Models;
+using System;
 
 namespace PierresBakery.Tests
 {
@@ -52,12 +53,24 @@ namespace PierresBakery.Tests
      {
       //Arrange
       int price = 5;
-      int quantity = 3;
+      int quantity = 1;
       Bread newBread = new Bread(price, quantity);
       //Act
       int breadPrice = Bread.TotalBreadPrice(price, quantity);
+      Console.WriteLine(quantity);
       //Assert
       Assert.AreEqual(10, breadPrice);
+    }
+     [TestMethod] //5
+     public void GetBreadPrice_ReturnsPriceForOneLoaf_Int()
+     {
+      //Arrange
+  
+      Bread newBread = new Bread(5, 1);
+      //Act
+      int breadPrice = newBread.GetBreadPrice();
+      //Assert
+      Assert.AreEqual(5, breadPrice);
     }
   }
 }
