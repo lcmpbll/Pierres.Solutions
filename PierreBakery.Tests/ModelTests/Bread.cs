@@ -44,7 +44,7 @@ namespace PierresBakery.Tests
       int quantity = 2;
       Bread newBread = new Bread(price, quantity);
       //Act
-      int breadPrice = newBread.TotalBreadPrice(price, quantity);
+      int breadPrice = Bread.TotalBreadPrice(price, quantity);
       //Assert
       Assert.AreEqual(10, breadPrice);
     }
@@ -56,7 +56,7 @@ namespace PierresBakery.Tests
       int quantity = 3;
       Bread newBread = new Bread(price, quantity);
       //Act
-      int breadPrice = newBread.TotalBreadPrice(price, quantity);
+      int breadPrice = Bread.TotalBreadPrice(price, quantity);
       Console.WriteLine(quantity);
       //Assert
       Assert.AreEqual(10, breadPrice);

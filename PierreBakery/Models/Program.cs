@@ -8,12 +8,15 @@ namespace Bakery
     public static void Main()
    { 
       
-    //Pastry danish = new Pastry(2, 0);
+    
     Console.WriteLine("Welcome to Pierre's Bakery!");
     Console.WriteLine("The price for a loaf of bread is $5");
-    Order();
-    static int Order()
-    {
+    Console.WriteLine("The price for a pastry is $2");
+    OrderBread();
+
+    static void OrderBread()
+    { 
+      int pastryNumber = 0;
       int loafNumber = 0;
       Console.WriteLine("Would you like Bread or Pastry today? (bread/pastry)");
       string breadOrPastry = Console.ReadLine();
@@ -22,19 +25,38 @@ namespace Bakery
         Console.WriteLine("How Many Loaves?");
         string loafCount = Console.ReadLine();
         loafNumber = int.Parse(loafCount);
-       AddTotal(loafNumber); 
+        Console.WriteLine(loafNumber + "Loafs. Would you like pastries as well? (yes/no)");
+        string orderMore = Console.ReadLine();
+        if (orderMore.ToLower() == "yes")
+        {
+          Console.WriteLine("How many pastries would tou like?");
+          string pastryCount = Console.ReadLine();
+          pastryNumber = int.Parse(pastryCount);
+          Console.WriteLine(pastryNumber + "Pastries");
+          
+        }
       }
       else
       {
-        AddTotal(loafNumber);
+        Console.WriteLine("How many pastries would tou like?");
+          string pastryCount = Console.ReadLine();
+           pastryNumber = int.Parse(pastryCount);
+          Console.WriteLine(pastryNumber + "Pastries");
       }
-      return loafNumber;
+      AddTotal(loafNumber, pastryNumber);
+      
     }
-    static void AddTotal(int loafNumber)
+
+
+    static void AddTotal(int loafNumber, int pastryNumber)
     {
+      Pastry danish = new Pastry(2, 0);
       Bread ciabbatta = new Bread(5, 0); 
-      int price = ciabbatta.GetBreadPrice();
-      int total = Bread.TotalBreadPrice(price, loafNumber);
+      int loafPrice = ciabbatta.GetBreadPrice();
+      int breadPrice = Bread.TotalBreadPrice(loafPrice, loafNumber);
+      int danishPrice = danish.GetPastryPrice();
+      int pastryPrice = Pastry.TotalPastryPrice(danishPrice, pastryNumber);
+      int total = breadPrice + pastryPrice;
       Console.WriteLine("Your total is $" + total);
      
       
