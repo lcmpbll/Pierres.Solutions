@@ -11,5 +11,11 @@ namespace PierreBakery.Models
       Quantity = quantity;
     }
 
+    public static int TotalBreadPrice(int price, int quantity)
+    {
+      int totalPrice = price * quantity;
+      return totalPrice;
+    }
+
   }
 }
