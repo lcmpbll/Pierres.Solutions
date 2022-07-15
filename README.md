@@ -33,7 +33,7 @@ _This is a procject detailed [here](https://epicenter.epicodus.com/courses/968/c
 
 ## Known Bugs
 
-* Any known bugs
+* none
 
 ## License
 
