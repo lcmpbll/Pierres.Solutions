@@ -6,24 +6,24 @@ namespace PierresBakery.Tests
   [TestClass]
   public class BreadTests
   { 
-    [TestMethod]
+    [TestMethod] //1
     public void BreadConstructor_CreatesInstanceOfBread_Bread()
     {
-      Bread newBread = new Bread(5);
+      Bread newBread = new Bread(5, 1);
       Assert.AreEqual(typeof(Bread), newBread.GetType());
     }
-    [TestMethod]
+    [TestMethod] //2
     public void GetPrice_ReturnsThePriceOfOneLoaf_Int()
     {
       //Arrange
       int price = 5;
-      Bread newBread = new Bread(price);
+      Bread newBread = new Bread(price, 1);
       //Act
       int breadPrice = newBread.Price;
       //Assert
       Assert.AreEqual(price, breadPrice);
     }
-    [TestMethod]
+    [TestMethod] //3
     public void SetPrice_ReturnsPriceForTwoLoaves_Int()
     {
       //Arrange
@@ -33,7 +33,7 @@ namespace PierresBakery.Tests
       //Act
       int breadPrice = newBread.Price * newBread.Quantity;
       //Assert
-      Assert.AreEqual(10, breadPrice);
+      Assert.AreEqual(price * quantity, breadPrice);
     }
 
 
