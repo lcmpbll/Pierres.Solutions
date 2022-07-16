@@ -29,16 +29,17 @@ namespace Bakery
           string orderMore = Console.ReadLine();
           if (orderMore.ToLower() == "yes")
           {
-            Console.WriteLine("How many pastries would tou like?");
+            Console.WriteLine("How many pastries would you like?");
             string pastryCount = Console.ReadLine();
             pastryNumber = int.Parse(pastryCount);
             Console.WriteLine(pastryNumber + "Pastries");
+            AddTotal(loafNumber, pastryNumber);
             
           }
         }
         else
         {
-          Console.WriteLine("How many pastries would tou like?");
+          Console.WriteLine("How many pastries would you like?");
             string pastryCount = Console.ReadLine();
             pastryNumber = int.Parse(pastryCount);
             Console.WriteLine(pastryNumber + "Pastries");
